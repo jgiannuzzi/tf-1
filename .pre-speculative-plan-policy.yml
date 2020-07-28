@@ -1,7 +1,8 @@
 policy:
   approval:
-    - approved for speculative plan
-    - approved for merge
+    - and:
+      - approved for speculative plan
+      - approved for merge
 
 approval_rules:
   - name: approved for speculative plan
