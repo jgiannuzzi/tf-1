@@ -19,6 +19,9 @@ approval_rules:
       teams:
         - "jgiannuzzi-org/tf-approvers"
   - name: approved for merge
+    if:
+      has_successful_status:
+        - "Terraform Cloud/jgiannuzzi/tf"
     options:
       invalidate_on_push: true
       request_review:
