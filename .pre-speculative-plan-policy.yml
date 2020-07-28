@@ -1,6 +1,7 @@
 policy:
   approval:
     - approved for speculative plan
+    - approved for merge
 
 approval_rules:
   - name: approved for speculative plan
@@ -13,6 +14,18 @@ approval_rules:
         comments:
           - "/ok-to-test"
         github_review: false
+    requires:
+      count: 1
+      teams:
+        - "jgiannuzzi-org/tf-approvers"
+  - name: approved for merge
+    options:
+      invalidate_on_push: true
+      request_review:
+        enabled: true
+        mode: teams
+      methods:
+        github_review: true
     requires:
       count: 1
       teams:
