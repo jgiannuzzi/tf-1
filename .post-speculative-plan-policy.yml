@@ -4,6 +4,10 @@ policy:
 
 approval_rules:
   - name: approved for merge
+    if:
+      has_successful_status:
+        - "pre-speculative-plan-policy-bot: master"
+        - "Terraform Cloud/jgiannuzzi/tf"
     options:
       invalidate_on_push: true
       request_review:
