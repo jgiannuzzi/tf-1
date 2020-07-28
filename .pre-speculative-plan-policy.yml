@@ -1,0 +1,20 @@
+policy:
+  approval:
+    - approved for speculative plan
+
+approval_rules:
+  - name: approved for speculative plan
+    options:
+      invalidate_on_push: true
+      request_review:
+        enabled: true
+        mode: teams
+      methods:
+        comments:
+          - "/ok-to-test"
+        github_review: false
+    requires:
+      count: 1
+      teams:
+        - "jgiannuzzi-org/tf-approvers"
+
