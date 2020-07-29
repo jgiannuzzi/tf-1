@@ -1,0 +1,9 @@
+presubmits:
+  - name: trigger-tfe-speculative-plan
+    decorate: true
+    spec:
+      containers:
+        - image: alpine:latest
+          command:
+            - echo
+            - $REPO_OWNER/$REPO_NAME\#$PULL_NUMBER
