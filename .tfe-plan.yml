@@ -1,0 +1,4 @@
+triggers:
+  - organization: jgiannuzzi
+    workspace: tf
+    status: "pre-speculative-plan-policy-bot: master"
