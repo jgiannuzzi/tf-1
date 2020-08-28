@@ -1,4 +1,5 @@
 triggers:
   - organization: jgiannuzzi
     workspace: tf
+    directory: plop
     status: "pre-speculative-plan-policy-bot: master"
