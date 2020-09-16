@@ -1,4 +1,26 @@
-triggers:
+policy:
+  policy:
+    approval:
+    - lgtm
+
+  approval_rules:
+  - name: lgtm
+    options:
+      invalidate_on_push: true
+      request_review:
+        enabled: true
+      methods:
+        comments:
+          - "lgtm"
+          - "LGTM"
+        github_review: false
+    requires:
+      count: 1
+      teams:
+        - "jgiannuzzi-org/tf-approvers"
+
+plan:
+  triggers:
   - organization: jgiannuzzi
     workspace: tf
     directory: plop
