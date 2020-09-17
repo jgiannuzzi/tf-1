@@ -1,9 +1,11 @@
-policy:
-  policy:
-    approval:
-    - lgtm
+workspaces:
+  - organization: jgiannuzzi
+    name: tf
+    policy:
+      approval:
+        - lgtm
 
-  approval_rules:
+approval_rules:
   - name: lgtm
     options:
       invalidate_on_push: true
@@ -18,10 +20,3 @@ policy:
       count: 1
       teams:
         - "jgiannuzzi-org/tf-approvers"
-
-plan:
-  triggers:
-  - organization: jgiannuzzi
-    workspace: tf
-    directory: plop
-    status: "pre-speculative-plan-policy-bot: master"
