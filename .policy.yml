@@ -1,0 +1,20 @@
+policy:
+  approval:
+    - approved for merge
+
+approval_rules:
+  - name: approved for merge
+    if:
+      has_successful_status:
+        - "TFE/jgiannuzzi/tf"
+    options:
+      invalidate_on_push: true
+      request_review:
+        enabled: true
+        mode: teams
+      methods:
+        github_review: true
+    requires:
+      count: 1
+      teams:
+        - "jgiannuzzi-org/tf-approvers"
